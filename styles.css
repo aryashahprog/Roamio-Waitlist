@@ -1,11 +1,16 @@
 :root {
     --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    --text-primary: #1f2937;
-    --text-secondary: #4b5563;
-    --background: #ffffff;
+    --text-primary: #23272f;
+    --text-secondary: #6b7280;
+    --background: #f6f7fb;
     --input-border: #e5e7eb;
     --input-focus: #6366f1;
-    --button-hover: #4f46e5;
+    --button-bg: #23272f;
+    --button-bg-hover: #111215;
+    --button-text: #fff;
+    --nav-bg: #fff;
+    --nav-border: #e5e7eb;
+    --footer-bg: #f6f7fb;
 }
 
 * {
@@ -19,189 +24,333 @@ html, body {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.5;
+    font-family: 'Inter', 'Poppins', sans-serif;
     color: var(--text-primary);
     background: var(--background);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     min-height: 100vh;
 }
 
-.container {
+.navbar {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    text-align: center;
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--nav-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3vw 1.5rem 3vw;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-header {
-    margin-bottom: 3rem;
-}
-
-.logo {
-    font-size: 1.75rem;
+.nav-logo {
+    font-size: 2rem;
     font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
     color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 2rem;
+    transition: background 0.15s, color 0.15s;
+}
+
+.nav-btn.primary {
+    background: var(--button-bg);
+    color: var(--button-text);
+    font-weight: 600;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.nav-btn.primary:hover {
+    background: var(--button-bg-hover);
+}
+
+.nav-btn.secondary {
+    border: 1.5px solid var(--nav-border);
+    background: #fff;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.nav-btn.secondary:hover {
+    background: #f3f4f6;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 70vh;
+    width: 100%;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 .hero {
-    max-width: 800px;
+    width: 100%;
+    max-width: 700px;
     margin: 0 auto;
+    text-align: center;
 }
 
-h1 {
-    font-size: 3.5rem;
+.hero-title {
+    font-size: 2.6rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: 1.35rem;
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
-.subheadline {
-    font-size: 1.5rem;
+.hero-description {
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
-}
-
-.description {
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-    margin-bottom: 3rem;
-    max-width: 600px;
+    margin-bottom: 2.2rem;
+    max-width: 540px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.features {
+.features-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 3rem;
-    margin-bottom: 3rem;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
     flex-wrap: wrap;
 }
 
 .feature {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    font-size: 1.125rem;
+    gap: 0.6rem;
+    font-size: 1.08rem;
     color: var(--text-primary);
-    min-width: 200px;
-}
-
-.emoji {
-    font-size: 1.5rem;
-}
-
-.feature-text {
     font-weight: 500;
 }
 
+.emoji {
+    font-size: 1.3rem;
+}
+
 .waitlist-form {
-    max-width: 500px;
+    width: 100%;
+    max-width: 420px;
     margin: 0 auto;
 }
 
-.form-group {
+.pill-form {
     display: flex;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
+    align-items: center;
+    background: #fff;
+    border-radius: 2.5rem;
+    box-shadow: 0 2px 12px 0 rgba(80,80,120,0.04);
+    border: 1.5px solid var(--input-border);
+    padding: 0.25rem 0.25rem 0.25rem 1.1rem;
+    margin-bottom: 0.7rem;
 }
 
-input[type="email"] {
-    flex: 1;
-    padding: 0.875rem 1rem;
-    font-size: 1rem;
-    border: 2px solid var(--input-border);
-    border-radius: 0.5rem;
-    outline: none;
-    transition: border-color 0.2s;
-}
-
-input[type="email"]:focus {
-    border-color: var(--input-focus);
-}
-
-button {
-    padding: 0.875rem 1.75rem;
-    font-size: 1rem;
-    font-weight: 600;
-    color: white;
-    background: var(--primary-gradient);
+.pill-form input[type="email"] {
     border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    white-space: nowrap;
+    outline: none;
+    background: transparent;
+    font-size: 1.08rem;
+    flex: 1;
+    padding: 0.9rem 0.5rem 0.9rem 0;
+    font-family: inherit;
 }
 
-button:hover {
-    opacity: 0.9;
+.pill-form input[type="email"]::placeholder {
+    color: #b0b3bb;
+    opacity: 1;
+}
+
+.pill-form button {
+    background: var(--button-bg);
+    color: var(--button-text);
+    font-weight: 600;
+    font-size: 1.08rem;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.8rem 1.6rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pill-form button:hover {
+    background: var(--button-bg-hover);
+}
+
+.arrow {
+    font-size: 1.2em;
+    margin-left: 0.2em;
 }
 
 .form-message {
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
     min-height: 1.25rem;
+    margin-bottom: 0.2rem;
 }
 
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
+.form-hint {
+    font-size: 0.98rem;
+    color: #a0a3ad;
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+}
 
-    .subheadline {
-        font-size: 1.25rem;
-    }
+.footer {
+    background: var(--footer-bg);
+    border-top: 1.5px solid var(--nav-border);
+    padding: 2.5rem 0 1.5rem 0;
+    margin-top: 3rem;
+    width: 100%;
+}
 
-    .features {
+.footer-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2.5rem;
+    padding: 0 3vw;
+}
+
+.footer-brand {
+    min-width: 220px;
+    max-width: 320px;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+}
+
+.footer-desc {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+}
+
+.footer-columns {
+    display: flex;
+    gap: 3.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    min-width: 120px;
+}
+
+.footer-col-title {
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+    color: var(--text-primary);
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.15s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--text-primary);
+}
+
+@media (max-width: 900px) {
+    .footer-main {
         flex-direction: column;
-        gap: 1.5rem;
-        align-items: center;
+        gap: 2rem;
+        align-items: flex-start;
     }
-
-    .feature {
-        min-width: auto;
+    .footer-columns {
+        gap: 2rem;
     }
+}
 
-    .form-group {
+@media (max-width: 700px) {
+    .navbar {
         flex-direction: column;
+        align-items: flex-start;
+        padding: 1.2rem 4vw;
+        gap: 1rem;
     }
-
-    button {
-        width: 100%;
+    .main-content {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
     }
-
-    .container {
-        padding: 1.5rem 1rem;
+    .hero-title {
+        font-size: 2rem;
     }
-
-    header {
-        margin-bottom: 2rem;
+    .features-row {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    .footer-main {
+        padding: 0 4vw;
     }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 2rem;
+    .navbar {
+        padding: 1rem 2vw;
     }
-
-    .subheadline {
-        font-size: 1.125rem;
+    .footer-main {
+        padding: 0 2vw;
     }
-
-    .description {
-        font-size: 1rem;
+    .footer {
+        padding: 1.5rem 0 1rem 0;
     }
-
-    .feature {
-        font-size: 1rem;
+    .hero-title {
+        font-size: 1.3rem;
+    }
+    .hero-description {
+        font-size: 0.98rem;
+    }
+    .pill-form input[type="email"] {
+        font-size: 0.98rem;
+    }
+    .pill-form button {
+        font-size: 0.98rem;
+        padding: 0.7rem 1.1rem;
     }
 } 
