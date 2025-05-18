@@ -10,14 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-logo">Roamio</div>
-        <ul class="nav-links">
+    <header class="mobile-header">
+        <div class="logo">Roamio</div>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+    <nav class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu" aria-label="Close menu">&times;</button>
+        <ul>
             <li><a href="#features">Features</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#team">Team</a></li>
-            <li><a href="#" class="nav-btn primary">Join Waitlist</a></li>
         </ul>
+        <a href="#waitlist" class="menu-btn">Waitlist</a>
     </nav>
     <main class="main-content">
         <section class="hero">
@@ -37,42 +43,20 @@
                     <button type="submit">Join waitlist <span class="arrow">→</span></button>
                 </div>
                 <p class="form-message" id="form-message"></p>
-                <p class="form-hint">Want to jump in sooner? Deploy an early version of Roamio yourself.</p>
             </form>
+            <p class="form-hint">Want to jump in sooner? Deploy an early version of Roamio yourself.</p>
+            <div class="product-image">
+                <img src="dashboard-placeholder.png" alt="Roamio dashboard preview" />
+            </div>
         </section>
     </main>
     <footer class="footer">
         <div class="footer-main">
-            <div class="footer-brand">
-                <div class="footer-logo">Roamio</div>
-                <div class="footer-desc">Get on the waitlist to receive an alert when the hosted version of the app is ready.</div>
-            </div>
-            <div class="footer-columns">
-                <div class="footer-col">
-                    <div class="footer-col-title">Company</div>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contacts</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <div class="footer-col-title">Resources</div>
-                    <ul>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <div class="footer-col-title">Features</div>
-                    <ul>
-                        <li><a href="#">Collaborate</a></li>
-                        <li><a href="#">Integrations</a></li>
-                        <li><a href="#">Customization</a></li>
-                    </ul>
-                </div>
-            </div>
+            <div class="footer-logo">Roamio</div>
+            <ul class="footer-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
         </div>
     </footer>
     <script src="script.js"></script>
