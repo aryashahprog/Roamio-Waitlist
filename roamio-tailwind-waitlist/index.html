@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roamio – Get Early Access</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    html, body { height: 100%; }
+    body { min-height: 100vh; }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s, transform 0.7s; }
+    .fade-in.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-[#eaf1ff] via-[#f9f9f9] to-[#f3f7ff] min-h-screen flex flex-col">
+  <!-- Navbar -->
+  <nav class="w-full flex items-center justify-between px-6 py-5 md:py-7">
+    <div class="text-2xl font-bold text-[#0040C9] tracking-tight">Roamio</div>
+    <!-- No extra links -->
+  </nav>
+
+  <!-- Hero Section -->
+  <main class="flex-1 flex flex-col items-center justify-center px-4">
+    <section class="w-full max-w-xl mx-auto text-center mt-8 fade-in">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">Never Miss a Campus Moment Again</h1>
+      <p class="text-lg md:text-xl text-gray-600 mb-8">Discover events. Navigate campus. Connect instantly.</p>
+      <form action="https://sheetdb.io/api/v1/ozh2aa4b5rh9f" method="POST" class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full mb-3">
+        <input type="email" name="data[email]" required placeholder="Enter your email" class="w-full sm:w-auto flex-1 px-5 py-3 rounded-full border border-gray-200 focus:border-[#0040C9] focus:ring-2 focus:ring-[#0040C9]/20 outline-none text-base transition" />
+        <button type="submit" class="w-full sm:w-auto px-8 py-3 rounded-full bg-[#0040C9] text-white font-semibold text-base shadow-md hover:bg-[#003399] transition">Join the Waitlist</button>
+      </form>
+      <div class="text-sm text-gray-500 mb-2">Get early access to Roamio before we launch.</div>
+    </section>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="w-full flex flex-col items-center justify-center py-6 fade-in">
+    <div class="flex gap-4">
+      <a href="https://instagram.com/roamio.atl" target="_blank" rel="noopener" class="text-gray-400 hover:text-[#0040C9] transition" aria-label="Instagram">
+        <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm5.25.75a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path></svg>
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-gray-400 hover:text-[#0040C9] transition" aria-label="LinkedIn">
+        <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.18-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>
+      </a>
+    </div>
+  </footer>
+  <script>
+    // Fade-in animation on scroll
+    function onScrollFadeIn() {
+      document.querySelectorAll('.fade-in').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 40) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', onScrollFadeIn);
+    window.addEventListener('DOMContentLoaded', onScrollFadeIn);
+  </script>
+</body>
+</html> 
